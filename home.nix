@@ -25,6 +25,11 @@
       enable = true;
       package = pkgs.rofi-wayland;
     };
+    git = {
+      enable = true;
+      userName = "Rmoffitt";
+      userEmail = "rmoff938@students.bju.edu";
+    };
     waybar = {
       enable = true;
       settings = [
@@ -109,6 +114,7 @@
         "eimadpbcbfnmbkopoojfekhnkhdbieeh" # dark reader
         "gfbliohnnapiefjpjlpjnehglfpaknnc" # surfingkeys
         "nngceckbapebfimnlniiiahkandclblb" # bitwarden
+	"pnlccmojcmeohlpggmfnbbiapkmbliob" # roboform
       ];
     };
     zoxide.enable = true;

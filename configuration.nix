@@ -6,6 +6,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
+    ./muse.nix
   ];
 
   # Bootloader.
@@ -20,11 +21,17 @@
   time.timeZone = "America/New_York";
 
   i18n.defaultLocale = "en_US.UTF-8";
-
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-    xkb.options = "caps:escape";
+  services = {
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
+    xserver = {
+      layout = "us";
+      xkbVariant = "";
+      xkb.options = "caps:escape";
+    };
   };
 
   users.users.ryanm = {
@@ -67,7 +74,7 @@
     fastfetch
     killall
     ripgrep
-    discord
+    vesktop
     python3
     choose
     htop
