@@ -17,7 +17,7 @@
         name = "JetBrainsMono Nerd Font Mono";
       };
     };
-    image = /home/ryanm/wallpaper.png;
+    image = ./wallpaper.png;
     polarity = "dark";
     opacity = {
       terminal = 0.9;
