@@ -71,8 +71,11 @@
     inputs.fix-python.packages.${pkgs.system}.default
     inputs.alejandra.defaultPackage.${pkgs.system}
     nix-output-monitor
+    signal-desktop
+    protonup-ng
     fastfetch
     killall
+    openvpn
     ripgrep
     vesktop
     python3
@@ -113,7 +116,13 @@
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+      localNetworkGameTransfers.openFirewall = true;
+    };
   };
 
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.05";
 }
