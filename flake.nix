@@ -13,6 +13,7 @@
 
     alejandra.url = "github:kamadorueda/alejandra/3.0.0"; # formatter
     fix-python.url = "github:GuillaumeDesforges/fix-python"; # script to fix python binaries
+    nix-alien.url = "github:thiagokokada/nix-alien";
     stylix.url = "github:danth/stylix"; # module to style all apps and guis
   };
   outputs = inputs: let

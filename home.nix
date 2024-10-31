@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   home.stateVersion = "24.05";
+  services.dunst.enable = true;
   programs = {
     kitty = {
       enable = true;
@@ -14,11 +15,20 @@
     fish = {
       enable = true;
       shellInit = ''
-             function fish_command_not_found
-        echo skill issue: $argv[1]
-             end
-             set -g fish_greeting ""
-             ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+                     function fish_command_not_found
+                      echo skill issue: $argv[1]
+        end
+         function pythonEnv --description 'start a nix-shell with the given python packages' --argument pythonVersion
+                    if set -q argv[2]
+                      set argv $argv[2..-1]
+                    end
+                    for el in $argv
+                      set ppkgs $ppkgs "python"$pythonVersion"Packages.$el"
+                    end
+                    nix-shell -p $ppkgs
+                     end
+                     set -g fish_greeting ""
+                     ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
       '';
     };
     rofi = {
@@ -27,7 +37,7 @@
     };
     git = {
       enable = true;
-      userName = "Rmoffitt";
+      userName = "Sintfoap";
       userEmail = "rmoff938@students.bju.edu";
     };
     waybar = {
@@ -41,7 +51,7 @@
           position = "top";
           modules-center = [];
           modules-left = ["hyprland/workspaces"];
-          modules-right = ["tray" "pulseaudio" "network" "cpu" "memory" "temperature" "disk" "backlight" "battery" "clock#c2" "clock" "custom/mt"];
+          modules-right = ["tray" "pulseaudio" "network" "cpu" "memory" "temperature" "disk" "backlight" "battery" "clock#c2" "clock" "custom/mt" "custom/chron"];
           "hyprland/workspaces" = {
             format = "{icon}";
           };
@@ -54,6 +64,11 @@
               critical = 7;
               warning = 15;
             };
+          };
+          "custom/chron" = {
+            interval = 1;
+            exec = "chron";
+            format = "{}";
           };
           clock = {
             interval = 1;
@@ -112,10 +127,14 @@
       ];
       extensions = [
         "eimadpbcbfnmbkopoojfekhnkhdbieeh" # dark reader
-        "gfbliohnnapiefjpjlpjnehglfpaknnc" # surfingkeys
         "nngceckbapebfimnlniiiahkandclblb" # bitwarden
-	"pnlccmojcmeohlpggmfnbbiapkmbliob" # roboform
+        "hfjbmagddngcpeloejdejnfgbamkjaeg" # vimium-c
+        "pnlccmojcmeohlpggmfnbbiapkmbliob" # roboform
+        "cndibmoanboadcifjkjbdpjgfedanolh" # canvas
       ];
+    };
+    firefox = {
+      enable = true;
     };
     zoxide.enable = true;
   };
@@ -128,11 +147,9 @@
 
     eza
     fzf
-
-    (pkgs.callPackage ./startup.nix {})
   ];
 
-  home.file = {
+ home.file = {
     ".config/hypr/hyprland.conf".text = ''
       source = ~/nixos/hyprland.conf
     '';

@@ -10,14 +10,15 @@
     enable = true;
     fonts = {
       sizes = {
-        terminal = 13;
+        terminal = 11;
+	applications = 11;
       };
       monospace = {
         package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
         name = "JetBrainsMono Nerd Font Mono";
       };
     };
-    image = ./wallpaper.png;
+    image = /home/ryanm/wallpaper.png;
     polarity = "dark";
     opacity = {
       terminal = 0.9;
