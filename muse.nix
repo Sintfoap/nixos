@@ -11,14 +11,14 @@
     fonts = {
       sizes = {
         terminal = 11;
-	applications = 11;
+        applications = 11;
       };
       monospace = {
         package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
         name = "JetBrainsMono Nerd Font Mono";
       };
     };
-    image = "/home/ryanm/wallpaper.png";
+    image = ./wallpaper.png;
     polarity = "dark";
     opacity = {
       terminal = 0.9;
