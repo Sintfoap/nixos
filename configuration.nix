@@ -15,6 +15,7 @@
     nvidiaBusId = "PCI:0:1:0";
     # amdgpuBusId = "PCI:54:0:0"; For AMD GPU
   };
+  hardware.pulseaudio.enable = false;
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
@@ -40,6 +41,9 @@
     blueman.enable = true;
     pipewire = {
       enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      jack.enable = true;
       pulse.enable = true;
       wireplumber.enable = true;
     };
@@ -148,7 +152,6 @@
     libsForQt5.okular
     swaylock-effects
     signal-desktop
-    android-studio
     docker-compose
     brightnessctl
     libqalculate
@@ -183,6 +186,7 @@
     poetry
     pipenv
     choose
+    typst
     qgis
     gdal
     dpkg
