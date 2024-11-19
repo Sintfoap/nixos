@@ -141,12 +141,7 @@
     inputs.fix-python.packages.${pkgs.system}.default
     inputs.alejandra.defaultPackage.${pkgs.system}
     inputs.orb.packages.${pkgs.system}.default
-    python311Packages.django-extensions
     (pkgs.callPackage ./chron.nix {})
-    python311Packages.matplotlib
-    python311Packages.psycopg2
-    python311Packages.django
-    python311Packages.numpy
     networkmanagerapplet
     nix-output-monitor
     libsForQt5.okular
@@ -165,13 +160,12 @@
     fastfetch
     steam-run
     libnotify
-    ploticus
+    html-tidy
+    r2modman
     autoconf
     minikube
     quickemu
-    latexrun
     typstfmt
-    flutter
     dolphin
     openssh
     nyancat
