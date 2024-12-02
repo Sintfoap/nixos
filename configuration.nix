@@ -177,6 +177,7 @@
     ripgrep
     vesktop
     conjure	
+    sticky
     awscli
     poetry
     pipenv
