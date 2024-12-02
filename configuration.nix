@@ -156,6 +156,7 @@
     pulsemixer
     obs-studio
     kubernetes
+    todofi-sh
     python311
     fastfetch
     steam-run
@@ -176,8 +177,7 @@
     openvpn
     ripgrep
     vesktop
-    conjure	
-    sticky
+    conjure
     awscli
     poetry
     pipenv
