@@ -161,6 +161,7 @@
     steam-run
     libnotify
     html-tidy
+    nodejs_22
     r2modman
     autoconf
     minikube
@@ -171,16 +172,15 @@
     nyancat
     kompose
     killall
-    photoqt
     kubectl
     openvpn
     ripgrep
     vesktop
+    conjure	
     awscli
     poetry
     pipenv
     choose
-    nodejs_22
     typst
     qgis
     gdal
