@@ -180,6 +180,7 @@
     poetry
     pipenv
     choose
+    nodejs_22
     typst
     qgis
     gdal
