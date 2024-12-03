@@ -2,6 +2,11 @@
   home.stateVersion = "24.05";
   services.dunst.enable = true;
   programs = {
+    direnv = {
+      enable = true;
+      enableFishIntegration = true;
+      nix-direnv.enable = true;
+    };
     kitty = {
       enable = true;
       settings = {
