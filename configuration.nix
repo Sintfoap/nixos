@@ -156,6 +156,7 @@
     pulsemixer
     obs-studio
     kubernetes
+    nix-direnv
     todofi-sh
     python311
     fastfetch
