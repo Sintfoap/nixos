@@ -146,6 +146,7 @@
     nix-output-monitor
     libsForQt5.okular
     swaylock-effects
+    todoist-electron
     signal-desktop
     docker-compose
     brightnessctl
@@ -156,8 +157,6 @@
     pulsemixer
     obs-studio
     kubernetes
-    nix-direnv
-    todofi-sh
     python311
     fastfetch
     steam-run
@@ -169,6 +168,7 @@
     minikube
     quickemu
     typstfmt
+    todoist
     dolphin
     openssh
     nyancat

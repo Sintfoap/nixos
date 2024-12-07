@@ -14,8 +14,8 @@
         applications = 11;
       };
       monospace = {
-        package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
-        name = "JetBrainsMono Nerd Font Mono";
+        package = pkgs.nerd-fonts.jetbrains-mono;
+	name = "JetBrainsMono Nerd Font Mono";
       };
     };
     image = ./wallpaper.png;
