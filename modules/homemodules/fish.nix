@@ -35,7 +35,7 @@
   ];
   home.file = {
     ".config/hypr/hyprland.conf".text = ''
-      source = ~/nixos/hyprland.conf
+      source = ~/nixos/modules/hypr/hyprland.conf
     '';
   };
 }

@@ -1,7 +1,6 @@
 {pkgs, ...}: let
   username = "ryanm";
   homeDirectory = "/home/${username}";
-  configHome = "${homeDirectory}/.config";
 in {
   imports = [./homemodules];
 

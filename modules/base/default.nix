@@ -6,6 +6,7 @@
   imports = [
     ./servs.nix
     ./progs.nix
+    ./user.nix
   ];
 
   options.base = {
@@ -44,7 +45,7 @@
         BROWSER = "brave";
         TERMINAL = "foot";
       };
-      shellAiliases = {
+      shellAliases = {
         nv = "nvim";
         nixvim = "/home/ryanm/nixvim/result/bin/nvim";
         cat = "bat";

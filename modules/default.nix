@@ -4,9 +4,7 @@
   ...
 }: {
   imports = [
-    ./homemodules 
     ./base
-    ./hypr
     ./packages
     ./stylix.nix
     ./boot.nix
@@ -23,14 +21,6 @@
     };
 
     home.enable = lib.mkDefault true;
-    hypr.enable = lib.mkDefault true;
 
-    packages = {
-      enable = lib.mkDefault true;
-      gui.enable = lib.mkDefault true;
-      minimus.enable = lib.mkDefault true;
-      programming.enable = lib.mkDefault true;
-      etc.enable = lib.mkDefault true;
-    };
   };
 }

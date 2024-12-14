@@ -5,7 +5,7 @@
   config,
   ...
 }: {
-  config = lib.mkIf config.packages.enable {
+  config = {
     environment.systemPackages = with pkgs; [
       inputs.nix-alien.packages.${pkgs.system}.nix-alien
       inputs.fix-python.packages.${pkgs.system}.default
