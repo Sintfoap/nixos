@@ -23,12 +23,12 @@
       inherit system overlays; # same thing as `system = system; overlays = overlays;`
       config.allowUnfree = true; # allow proprietary software
     };
+
+    ns = host: (lib.nixosSystem {
+      specialArgs = {inherit pkgs inputs;};
+      modules = [(./hosts + "/${host}")];
+    });
   in {
-    nixosConfigurations = {
-      archemides = lib.nixosSystem {
-        specialArgs = {inherit pkgs inputs;};
-        modules = [./configuration.nix];
-      };
-    };
+    nixosConfigurations = lib.attrsets.genAttrs ["labyrinth"] ns;
   };
 }
