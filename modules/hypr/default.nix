@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   imports = [./waybar.nix];
@@ -38,7 +39,7 @@
           gaps_in = 5;
           gaps_out = 20;
 
-          boarder_size = 1;
+          border_size = 1;
 
           "col.active_border" = "rgba(${config.stylix.base16Scheme.base04}ff) rgba(${config.stylix.base16Scheme.base0C}ff) 30deg";
           "col.inactive_border" = "rgba(${config.stylix.base16Scheme.base01}aa)";
@@ -83,7 +84,7 @@
 
         gestures.workspace_swipe = false;
 
-        windorulev2 = [
+        windowrulev2 = [
           "workspace 1, title:^(.*foot.*)$"
           "workspace 1, title:^(.*firefox.*)$"
           "workspace 1, title:^(.*kitty.*)$"
@@ -94,7 +95,7 @@
         ];
 
         bind = [
-          "SUPER + CONTROL, l, exec, swaylock --clock --indicator --fade-in 0.2 --indicator-image /home/ryanm/wallpaper.png --screenshots --effect-blur 7x5 --effect-vignette 0.5:0.5 --indicator-radius 100 --indicator-thickness 7 --key-hl-color 2e1409 --line-color 613e2e  --separator-color a49b9c --ring-color b5b9c2"
+          "SUPER + CONTROL, l, exec, ${pkgs.swaylock}/bin/swaylock --clock --indicator --fade-in 0.2 --indicator-image /home/ryanm/wallpaper.png --screenshots --effect-blur 7x5 --effect-vignette 0.5:0.5 --indicator-radius 100 --indicator-thickness 7 --key-hl-color 2e1409 --line-color 613e2e  --separator-color a49b9c --ring-color b5b9c2"
           ",xf86audiolowervolume, exec, pulsemixer --change-volume -5"
           ",xf86audioraisevolume, exec, pulsemixer --max-volume 150 --change-volume +5"
           ",xf86audiomute, exec, pulsemixer --toggle-mute"
@@ -103,28 +104,24 @@
           "SUPER + SHIFT, b, exec, brave"
           "SUPER + SHIFT, v, exec, vesktop"
           "SUPER + SHIFT, d, exec, signal-desktop"
-          "le binds, see https://wiki.hyprland.org/Configuring/Binds/ for more"
-          "SUPER, RETURN, exec, $terminal"
+          "SUPER, RETURN, exec, foot"
           "SUPER, B, exec, rofi -show drun"
           "SUPER, c, exec, rofi -show calc -modi calc -no-show-match -no-sort -qalc-binary qalc | wl-copy"
-          "SUPER, v, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+          "SUPER, v, exec, ${pkgs.stable.cliphist}/bin/cliphist list | rofi -dmenu | ${pkgs.stable.cliphist}/bin/cliphist decode | wl-copy"
           "SUPER, SPACE, togglefloating,"
           "SUPER, P, pseudo, # dwindle"
           "SUPER, t, togglesplit,"
           "SUPER + SHIFT, Q, killactive,"
-          "SUPER, M, exit,"
+          "SUPER, M, exit"
           "SUPER, R, exec, $menu"
           "SUPER, N, exec, sticky"
-          ", print, exec, hyprshot -m output --clipboard-only"
-          "SHIFT, print, exec, hyprshot -m window --clipboard-only"
-          "SUPER SHIFT, s, exec, hyprshot -m region --clipboard-only"
-          "SUPER, n, exec, todoist-electron"
-          "SUPER CONTROL, s, exec, wl-paste | swappy -f -"
+          ", print, exec, ${pkgs.hyprshot}/bin/hyprshot -m output --clipboard-only"
+          "SHIFT, print, exec, ${pkgs.hyprshot}/bin/hyprshot -m window --clipboard-only"
+          "SUPER SHIFT, s, exec, ${pkgs.hyprshot}/bin/hyprshot -m region --clipboard-only"
+          "SUPER CONTROL, s, exec, wl-paste | ${pkgs.swappy}/bin/swappy -f -"
           "SUPER, f, fullscreen, 1"
           "SUPER SHIFT, f, fullscreen, 0"
           "SUPER, o, movecurrentworkspacetomonitor, +1"
-          "SUPER, code:9, exec, hyprlock --immediate"
-          "focus with m + arrow keys"
           "SUPER, h, movefocus, l"
           "SUPER, l, movefocus, r"
           "SUPER, k, movefocus, u"
@@ -154,8 +151,8 @@
           "SUPER SHIFT, 8, movetoworkspace, 8"
           "SUPER SHIFT, 9, movetoworkspace, 9"
           "SUPER SHIFT, 0, movetoworkspace, 10"
-          "SUPER, mouse_down, workspace, e+1"
-          "SUPER, mouse_up, workspace, e-1"
+        ];
+        bindm = [
           "SUPER, mouse:272, movewindow"
           "SUPER, mouse:273, resizewindow"
         ];
