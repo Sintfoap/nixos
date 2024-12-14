@@ -2,10 +2,11 @@
   pkgs,
   inputs,
   ...
-}: {
-  imports = [
-    inputs.stylix.nixosModules.stylix
-  ];
+}: let
+  image = ../wallpaper.png;
+in {
+  imports = [inputs.stylix.nixosModules.stylix];
+
   stylix = {
     enable = true;
     fonts = {
@@ -15,10 +16,10 @@
       };
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
-	name = "JetBrainsMono Nerd Font Mono";
+        name = "JetBrainsMono Nerd Font Mono";
       };
     };
-    image = ./wallpaper.png;
+    image = image;
     polarity = "dark";
     opacity = {
       terminal = 0.9;

@@ -2,15 +2,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-
-    orb.url = "github:Sintfoap/nixvim";
-
-    # packages (and modules) to be pulled directly from source (github.com)
-
     home-manager.url = "github:nix-community/home-manager"; # module to manage home config files
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    orb.url = "github:Sintfoap/nixvim";
     alejandra.url = "github:kamadorueda/alejandra/3.0.0"; # formatter
     fix-python.url = "github:GuillaumeDesforges/fix-python"; # script to fix python binaries
     nix-alien.url = "github:thiagokokada/nix-alien";
