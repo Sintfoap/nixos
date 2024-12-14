@@ -29,6 +29,6 @@
       modules = [(./hosts + "/${host}")];
     });
   in {
-    nixosConfigurations = lib.attrsets.genAttrs ["labyrinth" "archemides"] ns;
+    nixosConfigurations = lib.attrsets.genAttrs ["labyrinth"] ns;
   };
 }
