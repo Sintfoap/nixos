@@ -22,6 +22,7 @@
     };
 
     home.enable = lib.mkDefault true;
+    hypr.enable = lib.mkDefault true;
 
   };
 }

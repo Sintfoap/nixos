@@ -14,153 +14,152 @@
       enable = true;
       settings = lib.mkForce {
         monitor = [",preferred, auto, auto"];
-      };
-      exec-once = [
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "vesktop & signal-desktop & foot & nm-applet & brave & waybar & swww-daemon & bluetoothd & blueman-manager"
-        "wl-paste --watch cliphist store"
-        "swww img ~/wallpaper.png"
-      ];
+        exec-once = [
+          "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+          "vesktop & signal-desktop & foot & nm-applet & brave & waybar & swww-daemon & bluetoothd & blueman-manager"
+          "wl-paste --watch cliphist store"
+          "swww img ~/wallpaper.png"
+        ];
 
-      input = {
-        kb_layout = "us, us";
-        kb_options = "caps:escape";
+        input = {
+          kb_layout = "us, us";
+          kb_options = "caps:escape";
 
-        follow_mouse = 1;
+          follow_mouse = 1;
 
-        touchpad.natural_scroll = true;
+          touchpad.natural_scroll = true;
 
-        sensitivity = 0;
-        repeat_delay = 215;
-        repeat_rate = 50;
-      };
-
-      general = {
-        gaps_in = 5;
-        gaps_out = 20;
-
-        boarder_size = 1;
-
-        "col.active_border" = "rgba(${config.stylix.base16Scheme.base04}ff) rgba(${config.stylix.base16Scheme.base0C}ff) 30deg";
-        "col.inactive_border" = "rgba(${config.stylix.base16Scheme.base01}aa)";
-
-        resize_on_border = false;
-        layout = "dwindle";
-      };
-
-      decoration = {
-        rounding = 0;
-
-        blur = {
-          enabled = true;
-          size = 3;
-          passes = 1;
+          sensitivity = 0;
+          repeat_delay = 215;
+          repeat_rate = 50;
         };
-      };
 
-      misc = {
-        force_default_wallpaper = 0;
-        disable_hyprland_logo = false;
-      };
+        general = {
+          gaps_in = 5;
+          gaps_out = 20;
 
-      animations = {
-        enabled = true;
+          boarder_size = 1;
 
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+          "col.active_border" = "rgba(${config.stylix.base16Scheme.base04}ff) rgba(${config.stylix.base16Scheme.base0C}ff) 30deg";
+          "col.inactive_border" = "rgba(${config.stylix.base16Scheme.base01}aa)";
 
-        animation = [
-          "windows, 1, 7, myBezier"
-          "windowsOut, 1, 7, default, popin 80%"
-          "border, 1, 10, default"
-          "borderangle, 1, 8, default"
-          "fade, 1, 7, default"
-          "workspaces, 1, 6, default"
+          resize_on_border = false;
+          layout = "dwindle";
+        };
+
+        decoration = {
+          rounding = 0;
+
+          blur = {
+            enabled = true;
+            size = 3;
+            passes = 1;
+          };
+        };
+        misc = {
+          force_default_wallpaper = 0;
+          disable_hyprland_logo = false;
+        };
+
+        animations = {
+          enabled = true;
+
+          bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+
+          animation = [
+            "windows, 1, 7, myBezier"
+            "windowsOut, 1, 7, default, popin 80%"
+            "border, 1, 10, default"
+            "borderangle, 1, 8, default"
+            "fade, 1, 7, default"
+            "workspaces, 1, 6, default"
+          ];
+        };
+
+        dwindle = {
+          pseudotile = true;
+          preserve_split = true;
+        };
+
+        gestures.workspace_swipe = false;
+
+        windorulev2 = [
+          "workspace 1, title:^(.*foot.*)$"
+          "workspace 1, title:^(.*firefox.*)$"
+          "workspace 1, title:^(.*kitty.*)$"
+          "workspace 2, title:^(.*Signal.*)$"
+          "workspace 2, title:^(.*vesktop.*)$"
+          "workspace 3, title:^(.*Brave.*)$"
+          "float, title:^(All Files)$"
+        ];
+
+        bind = [
+          "SUPER + CONTROL, l, exec, swaylock --clock --indicator --fade-in 0.2 --indicator-image /home/ryanm/wallpaper.png --screenshots --effect-blur 7x5 --effect-vignette 0.5:0.5 --indicator-radius 100 --indicator-thickness 7 --key-hl-color 2e1409 --line-color 613e2e  --separator-color a49b9c --ring-color b5b9c2"
+          ",xf86audiolowervolume, exec, pulsemixer --change-volume -5"
+          ",xf86audioraisevolume, exec, pulsemixer --max-volume 150 --change-volume +5"
+          ",xf86audiomute, exec, pulsemixer --toggle-mute"
+          ",xf86monbrightnessup, exec, brightnessctl s 10%+"
+          ",xf86monbrightnessdown, exec, brightnessctl s 10%-"
+          "SUPER + SHIFT, b, exec, brave"
+          "SUPER + SHIFT, v, exec, vesktop"
+          "SUPER + SHIFT, d, exec, signal-desktop"
+          "le binds, see https://wiki.hyprland.org/Configuring/Binds/ for more"
+          "SUPER, RETURN, exec, $terminal"
+          "SUPER, B, exec, rofi -show drun"
+          "SUPER, c, exec, rofi -show calc -modi calc -no-show-match -no-sort -qalc-binary qalc | wl-copy"
+          "SUPER, v, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+          "SUPER, SPACE, togglefloating,"
+          "SUPER, P, pseudo, # dwindle"
+          "SUPER, t, togglesplit,"
+          "SUPER + SHIFT, Q, killactive,"
+          "SUPER, M, exit,"
+          "SUPER, R, exec, $menu"
+          "SUPER, N, exec, sticky"
+          ", print, exec, hyprshot -m output --clipboard-only"
+          "SHIFT, print, exec, hyprshot -m window --clipboard-only"
+          "SUPER SHIFT, s, exec, hyprshot -m region --clipboard-only"
+          "SUPER, n, exec, todoist-electron"
+          "SUPER CONTROL, s, exec, wl-paste | swappy -f -"
+          "SUPER, f, fullscreen, 1"
+          "SUPER SHIFT, f, fullscreen, 0"
+          "SUPER, o, movecurrentworkspacetomonitor, +1"
+          "SUPER, code:9, exec, hyprlock --immediate"
+          "focus with m + arrow keys"
+          "SUPER, h, movefocus, l"
+          "SUPER, l, movefocus, r"
+          "SUPER, k, movefocus, u"
+          "SUPER, j, movefocus, d"
+          "SUPER SHIFT, j, movewindow, d"
+          "SUPER SHIFT, k, movewindow, u"
+          "SUPER SHIFT, h, movewindow, l"
+          "SUPER SHIFT, l, movewindow, r"
+          "SUPER SHIFT, t, togglesplit"
+          "SUPER, 1, workspace, 1"
+          "SUPER, 2, workspace, 2"
+          "SUPER, 3, workspace, 3"
+          "SUPER, 4, workspace, 4"
+          "SUPER, 5, workspace, 5"
+          "SUPER, 6, workspace, 6"
+          "SUPER, 7, workspace, 7"
+          "SUPER, 8, workspace, 8"
+          "SUPER, 9, workspace, 9"
+          "SUPER, 0, workspace, 10"
+          "SUPER SHIFT, 1, movetoworkspace, 1"
+          "SUPER SHIFT, 2, movetoworkspace, 2"
+          "SUPER SHIFT, 3, movetoworkspace, 3"
+          "SUPER SHIFT, 4, movetoworkspace, 4"
+          "SUPER SHIFT, 5, movetoworkspace, 5"
+          "SUPER SHIFT, 6, movetoworkspace, 6"
+          "SUPER SHIFT, 7, movetoworkspace, 7"
+          "SUPER SHIFT, 8, movetoworkspace, 8"
+          "SUPER SHIFT, 9, movetoworkspace, 9"
+          "SUPER SHIFT, 0, movetoworkspace, 10"
+          "SUPER, mouse_down, workspace, e+1"
+          "SUPER, mouse_up, workspace, e-1"
+          "SUPER, mouse:272, movewindow"
+          "SUPER, mouse:273, resizewindow"
         ];
       };
-
-      dwindle = {
-        pseudotile = true;
-        preserve_split = true;
-      };
-
-      gestures.workspace_swipe = false;
-
-      windorulev2 = [
-        "workspace 1, title:^(.*foot.*)$"
-        "workspace 1, title:^(.*firefox.*)$"
-        "workspace 1, title:^(.*kitty.*)$"
-        "workspace 2, title:^(.*Signal.*)$"
-        "workspace 2, title:^(.*vesktop.*)$"
-        "workspace 3, title:^(.*Brave.*)$"
-        "float, title:^(All Files)$"
-      ];
-
-      bind = [
-        "SUPER + CONTROL, l, exec, swaylock --clock --indicator --fade-in 0.2 --indicator-image /home/ryanm/wallpaper.png --screenshots --effect-blur 7x5 --effect-vignette 0.5:0.5 --indicator-radius 100 --indicator-thickness 7 --key-hl-color 2e1409 --line-color 613e2e  --separator-color a49b9c --ring-color b5b9c2"
-        ",xf86audiolowervolume, exec, pulsemixer --change-volume -5"
-        ",xf86audioraisevolume, exec, pulsemixer --max-volume 150 --change-volume +5"
-        ",xf86audiomute, exec, pulsemixer --toggle-mute"
-        ",xf86monbrightnessup, exec, brightnessctl s 10%+"
-        ",xf86monbrightnessdown, exec, brightnessctl s 10%-"
-        "SUPER + SHIFT, b, exec, brave"
-        "SUPER + SHIFT, v, exec, vesktop"
-        "SUPER + SHIFT, d, exec, signal-desktop"
-        "le binds, see https://wiki.hyprland.org/Configuring/Binds/ for more"
-        "SUPER, RETURN, exec, $terminal"
-        "SUPER, B, exec, rofi -show drun"
-        "SUPER, c, exec, rofi -show calc -modi calc -no-show-match -no-sort -qalc-binary qalc | wl-copy"
-        "SUPER, v, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-        "SUPER, SPACE, togglefloating,"
-        "SUPER, P, pseudo, # dwindle"
-        "SUPER, t, togglesplit,"
-        "SUPER + SHIFT, Q, killactive,"
-        "SUPER, M, exit,"
-        "SUPER, R, exec, $menu"
-        "SUPER, N, exec, sticky"
-        ", print, exec, hyprshot -m output --clipboard-only"
-        "SHIFT, print, exec, hyprshot -m window --clipboard-only"
-        "SUPER SHIFT, s, exec, hyprshot -m region --clipboard-only"
-        "SUPER, n, exec, todoist-electron"
-        "SUPER CONTROL, s, exec, wl-paste | swappy -f -"
-        "SUPER, f, fullscreen, 1"
-        "SUPER SHIFT, f, fullscreen, 0"
-        "SUPER, o, movecurrentworkspacetomonitor, +1"
-        "SUPER, code:9, exec, hyprlock --immediate"
-        "focus with m + arrow keys"
-        "SUPER, h, movefocus, l"
-        "SUPER, l, movefocus, r"
-        "SUPER, k, movefocus, u"
-        "SUPER, j, movefocus, d"
-        "SUPER SHIFT, j, movewindow, d"
-        "SUPER SHIFT, k, movewindow, u"
-        "SUPER SHIFT, h, movewindow, l"
-        "SUPER SHIFT, l, movewindow, r"
-        "SUPER SHIFT, t, togglesplit"
-        "SUPER, 1, workspace, 1"
-        "SUPER, 2, workspace, 2"
-        "SUPER, 3, workspace, 3"
-        "SUPER, 4, workspace, 4"
-        "SUPER, 5, workspace, 5"
-        "SUPER, 6, workspace, 6"
-        "SUPER, 7, workspace, 7"
-        "SUPER, 8, workspace, 8"
-        "SUPER, 9, workspace, 9"
-        "SUPER, 0, workspace, 10"
-        "SUPER SHIFT, 1, movetoworkspace, 1"
-        "SUPER SHIFT, 2, movetoworkspace, 2"
-        "SUPER SHIFT, 3, movetoworkspace, 3"
-        "SUPER SHIFT, 4, movetoworkspace, 4"
-        "SUPER SHIFT, 5, movetoworkspace, 5"
-        "SUPER SHIFT, 6, movetoworkspace, 6"
-        "SUPER SHIFT, 7, movetoworkspace, 7"
-        "SUPER SHIFT, 8, movetoworkspace, 8"
-        "SUPER SHIFT, 9, movetoworkspace, 9"
-        "SUPER SHIFT, 0, movetoworkspace, 10"
-        "SUPER, mouse_down, workspace, e+1"
-        "SUPER, mouse_up, workspace, e-1"
-        "SUPER, mouse:272, movewindow"
-        "SUPER, mouse:273, resizewindow"
-      ];
     };
   };
 }
