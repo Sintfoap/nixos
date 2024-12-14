@@ -6,6 +6,7 @@
   imports = [
     ./base
     ./packages
+    ./hypr
     ./stylix.nix
     ./boot.nix
   ];
