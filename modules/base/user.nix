@@ -7,6 +7,10 @@
 }: {
   imports = [inputs.home-manager.nixosModules.home-manager];
 
+  hardware.pulseaudio.enable = false;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   options.home.enable = lib.mkEnableOption "enables home modules";
 
   config = lib.mkIf config.user.base.user.enable {
