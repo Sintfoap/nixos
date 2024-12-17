@@ -16,6 +16,8 @@
       signal-desktop
       brightnessctl
       libqalculate
+      arduino-ide
+      arduino-cli
       protonup-ng
       pulsemixer
       obs-studio
@@ -42,10 +44,10 @@
       poetry
       pipenv
       choose
-      typst
       awscli
+      typst
+      dpkg
       qgis
-      wine
       htop
       ouch
       tldr

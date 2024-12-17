@@ -39,7 +39,7 @@
       users.ryanm = {
         isNormalUser = true;
         description = "Ryan Moffitt";
-        extraGroups = ["networkmanager" "wheel" "video" "audio" "libvirtd" "docker" "bluetooth"];
+        extraGroups = ["networkmanager" "wheel" "video" "audio" "libvirtd" "docker" "bluetooth" "dialout"];
         shell = pkgs.fish;
       };
     };

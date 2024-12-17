@@ -52,6 +52,7 @@
         ls = "eza --icons --color";
         zip = "ouch";
         h = "Hyprland";
+	kart = "/home/ryanm/programs/opt/kart/kart";
       };
     };
   };
