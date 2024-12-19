@@ -33,6 +33,7 @@
       autoconf
       minikube
       typstfmt
+      libclang
       vesktop
       nyancat
       todoist
