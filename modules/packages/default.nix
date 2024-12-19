@@ -27,6 +27,7 @@
       fastfetch
       html-tidy
       nodejs_22
+      musikcube
       quickemu
       r2modman
       onedrive

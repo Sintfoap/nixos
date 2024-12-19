@@ -21,6 +21,9 @@
 
     pkgs = import inputs.nixpkgs {
       inherit system overlays; # same thing as `system = system; overlays = overlays;`
+      config.permittedInsecurePackages = [
+        "python3.12-youtube-dl-2021.12.17"
+      ];
       config.allowUnfree = true; # allow proprietary software
     };
 
