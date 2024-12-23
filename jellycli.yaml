@@ -1,0 +1,38 @@
+gui:
+  debug_mode: false
+  double_click_ms: 220
+  enable_filtering: false
+  enable_results_filtering: true
+  enable_sorting: false
+  limit_recently_played: true
+  mouse_enabled: true
+  pagesize: 100
+  search_results_limit: 30
+  search_types:
+  - Artist
+  - Album
+  - Song
+  - Playlist
+  volume_steps: 20
+jellyfin:
+  device_id: ""
+  music_view: ""
+  server_id: ""
+  token: ""
+  url: ""
+  userid: ""
+player:
+  audio_buffering_ms: 150
+  enable_local_cache: false
+  enable_remote_control: true
+  http_buffering_limit_mem: 20
+  http_buffering_s: 5
+  local_cache_dir: /home/ryanm/.cache/jellycli
+  logfile: /tmp/nix-shell-107291-0/nix-shell-111465-0/jellycli.log
+  loglevel: info
+  server: jellyfin
+subsonic:
+  salt: ""
+  token: ""
+  url: ""
+  username: ""

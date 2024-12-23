@@ -19,6 +19,7 @@
       arduino-ide
       arduino-cli
       protonup-ng
+      ytmdesktop
       pulsemixer
       obs-studio
       steam-run
@@ -27,7 +28,6 @@
       fastfetch
       html-tidy
       nodejs_22
-      musikcube
       quickemu
       r2modman
       onedrive
