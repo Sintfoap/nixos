@@ -49,6 +49,7 @@
       awscli
       typst
       dpkg
+      gdal
       qgis
       htop
       ouch

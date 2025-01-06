@@ -6,6 +6,7 @@
 }: {
   config = lib.mkIf config.base.servs.enable {
     services = {
+      displayManager.ly.enable = true;
       blueman.enable = true;
       pipewire = {
         enable = true;
