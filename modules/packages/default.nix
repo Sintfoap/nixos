@@ -28,13 +28,13 @@
       fastfetch
       html-tidy
       nodejs_22
-      quickemu
       r2modman
       onedrive
       autoconf
       minikube
       typstfmt
       libclang
+      typstyle
       vesktop
       nyancat
       todoist
