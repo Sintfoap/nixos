@@ -11,11 +11,13 @@
       inputs.orb.packages.${pkgs.system}.default
       networkmanagerapplet
       nix-output-monitor
+      google-java-format
       swaylock-effects
       docker-compose
       signal-desktop
       brightnessctl
       libqalculate
+      tree-sitter
       arduino-ide
       arduino-cli
       protonup-ng
@@ -29,6 +31,7 @@
       html-tidy
       nodejs_22
       r2modman
+      quickemu
       onedrive
       autoconf
       minikube
@@ -43,10 +46,11 @@
       openvpn
       ripgrep
       conjure
-      poetry
       pipenv
+      gradle
       choose
       awscli
+      antlr
       typst
       dpkg
       gdal
@@ -55,6 +59,7 @@
       ouch
       tldr
       pipx
+      jdk
       gcc
       bat
       feh

@@ -9,6 +9,7 @@
     ./hypr
     ./stylix.nix
     ./boot.nix
+    ./battery.nix
   ];
 
   options.omni.enable = lib.mkOption {default = true;};
