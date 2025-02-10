@@ -35,7 +35,6 @@
       onedrive
       autoconf
       minikube
-      typstfmt
       libclang
       typstyle
       vesktop
@@ -46,12 +45,15 @@
       openvpn
       ripgrep
       conjure
+      poetry
       pipenv
       gradle
       choose
       awscli
+      lutris
       antlr
       typst
+      gimp
       dpkg
       gdal
       qgis

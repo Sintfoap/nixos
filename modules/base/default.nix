@@ -45,15 +45,6 @@
         BROWSER = "brave";
         TERMINAL = "foot";
       };
-      shellAliases = {
-        nv = "nvim";
-        nixvim = "/home/ryanm/nixvim/result/bin/nvim";
-        cat = "bat";
-        ls = "eza --icons --color";
-        zip = "ouch";
-        h = "Hyprland";
-	kart = "/home/ryanm/programs/opt/kart/kart";
-      };
     };
   };
 }
