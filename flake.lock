@@ -1190,11 +1190,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1739218952,
-        "narHash": "sha256-qdCkr63Cyf9OmRkNf0zvd4RYBPzS6zGq0m8+SgZ2/TQ=",
+        "lastModified": 1739937323,
+        "narHash": "sha256-FLtYTjWw4TRsqvHww55oXPE0XU6oCeGrbHz01XhgfHY=",
         "owner": "Sintfoap",
         "repo": "nixvim",
-        "rev": "d490088ea7eda39dee32d79bbda14c6e71a7a809",
+        "rev": "3bf2efd2d554938024694d40001b3290fd81fd57",
         "type": "github"
       },
       "original": {

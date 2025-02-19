@@ -13,9 +13,11 @@
       nix-output-monitor
       google-java-format
       swaylock-effects
+      universal-ctags
       docker-compose
       signal-desktop
       brightnessctl
+      prismlauncher
       libqalculate
       tree-sitter
       arduino-ide
