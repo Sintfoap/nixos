@@ -26,7 +26,6 @@
         abbr -a rpy rg --iglob='\'*.py'\'
 	abbr -a ptry source "(string split ' ' (poetry env activate))[2]"
 
-        fish_vi_key_bindings
         ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
       '';
     };

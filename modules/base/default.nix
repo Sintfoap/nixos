@@ -43,7 +43,7 @@
         EDITOR = "nvim";
         VISUAL = "nvim";
         BROWSER = "brave";
-        TERMINAL = "foot";
+        TERMINAL = "cool-retro-term";
       };
     };
   };

@@ -12,6 +12,7 @@
       networkmanagerapplet
       nix-output-monitor
       google-java-format
+      cool-retro-term
       swaylock-effects
       universal-ctags
       docker-compose

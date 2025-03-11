@@ -17,7 +17,7 @@
         monitor = [",preferred, auto, auto"];
         exec-once = [
           "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-          "vesktop & signal-desktop & foot & nm-applet & brave & waybar & swww-daemon & bluetoothd & blueman-manager"
+          "vesktop & signal-desktop & cool-retro-term & nm-applet & brave & waybar & swww-daemon & bluetoothd & blueman-manager"
           "wl-paste --watch cliphist store"
           "swww img ~/wallpaper.png"
         ];
@@ -85,13 +85,13 @@
         gestures.workspace_swipe = false;
 
         windowrulev2 = [
-          "workspace 1, title:^(.*foot.*)$"
           "workspace 1, title:^(.*firefox.*)$"
           "workspace 1, title:^(.*kitty.*)$"
           "workspace 2, title:^(.*Signal.*)$"
           "workspace 2, title:^(.*vesktop.*)$"
           "workspace 3, title:^(.*Brave.*)$"
           "float, title:^(All Files)$"
+          "workspace 1, fullscreen, maximize, title:^(.*cool-retro-term.*)$"
         ];
 
         bind = [
@@ -104,7 +104,7 @@
           "SUPER + SHIFT, b, exec, brave"
           "SUPER + SHIFT, v, exec, vesktop"
           "SUPER + SHIFT, d, exec, signal-desktop"
-          "SUPER, RETURN, exec, foot"
+          "SUPER, RETURN, exec, cool-retro-term"
           "SUPER, B, exec, rofi -show drun"
           "SUPER, c, exec, rofi -show calc -modi calc -no-show-match -no-sort -qalc-binary qalc | wl-copy"
           "SUPER, v, exec, ${pkgs.stable.cliphist}/bin/cliphist list | rofi -dmenu | ${pkgs.stable.cliphist}/bin/cliphist decode | wl-copy"
