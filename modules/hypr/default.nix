@@ -85,13 +85,13 @@
         gestures.workspace_swipe = false;
 
         windowrulev2 = [
+          "workspace 1, initialTitle:^(.*cool-retro-term.*)$"
+          "fullscreen, initialTitle:^(.*cool-retro-term.*)$"
           "workspace 1, title:^(.*firefox.*)$"
           "workspace 1, title:^(.*kitty.*)$"
           "workspace 2, title:^(.*Signal.*)$"
           "workspace 2, title:^(.*vesktop.*)$"
           "workspace 3, title:^(.*Brave.*)$"
-          "float, title:^(All Files)$"
-          "workspace 1, fullscreen, maximize, title:^(.*cool-retro-term.*)$"
         ];
 
         bind = [
