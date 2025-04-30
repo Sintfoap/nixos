@@ -6,7 +6,6 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    orb.url = "github:Sintfoap/nixvim";
     alejandra.url = "github:kamadorueda/alejandra/3.0.0"; # formatter
     fix-python.url = "github:GuillaumeDesforges/fix-python"; # script to fix python binaries
     nix-alien.url = "github:thiagokokada/nix-alien";

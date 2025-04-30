@@ -94,6 +94,10 @@
           "workspace 3, title:^(.*Brave.*)$"
         ];
 
+        binds = {
+          movefocus_cycles_fullscreen = true;
+        };
+
         bind = [
           "SUPER + CONTROL, l, exec, swaylock --clock --indicator --fade-in 0.2 --indicator-image /home/ryanm/wallpaper.png --screenshots --effect-blur 7x5 --effect-vignette 0.5:0.5 --indicator-radius 100 --indicator-thickness 7 --key-hl-color 2e1409 --line-color 613e2e  --separator-color a49b9c --ring-color b5b9c2"
           ",xf86audiolowervolume, exec, pulsemixer --change-volume -5"

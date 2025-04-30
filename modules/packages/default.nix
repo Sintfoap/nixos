@@ -8,38 +8,42 @@
       inputs.nix-alien.packages.${pkgs.system}.nix-alien
       inputs.fix-python.packages.${pkgs.system}.default
       inputs.alejandra.defaultPackage.${pkgs.system}
-      inputs.orb.packages.${pkgs.system}.default
       networkmanagerapplet
       nix-output-monitor
       google-java-format
-      cool-retro-term
       swaylock-effects
+      omnisharp-roslyn
+      cool-retro-term
       universal-ctags
       docker-compose
       signal-desktop
+      youtube-music
       brightnessctl
       prismlauncher
       libqalculate
+      blender-hip
       tree-sitter
       arduino-ide
       arduino-cli
       protonup-ng
-      ytmdesktop
       pulsemixer
       obs-studio
+      dotnet-sdk
+      csharp-ls
       steam-run
       libnotify
       python311
       fastfetch
       html-tidy
       nodejs_22
+      unityhub
       r2modman
       quickemu
       onedrive
       autoconf
-      minikube
       libclang
       typstyle
+      clojure
       vesktop
       nyancat
       todoist
@@ -48,24 +52,30 @@
       openvpn
       ripgrep
       conjure
+      vscode
       poetry
       pipenv
       gradle
       choose
+      neovim
       awscli
       lutris
       antlr
       typst
+      unzip
+      yazi
       gimp
       dpkg
       gdal
       qgis
       htop
+      mono
       ouch
       tldr
       pipx
       jdk
       gcc
+      gdb
       bat
       feh
       nvd
