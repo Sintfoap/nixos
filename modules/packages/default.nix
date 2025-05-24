@@ -27,11 +27,11 @@
       arduino-cli
       protonup-ng
       pulsemixer
-      lightworks
       obs-studio
       dotnet-sdk
       csharp-ls
       steam-run
+      flowblade
       libnotify
       python311
       fastfetch
