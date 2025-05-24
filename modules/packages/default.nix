@@ -21,13 +21,13 @@
       brightnessctl
       prismlauncher
       libqalculate
-      openshot-qt
       blender-hip
       tree-sitter
       arduino-ide
       arduino-cli
       protonup-ng
       pulsemixer
+      lightworks
       obs-studio
       dotnet-sdk
       csharp-ls
