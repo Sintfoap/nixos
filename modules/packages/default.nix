@@ -21,6 +21,7 @@
       brightnessctl
       prismlauncher
       libqalculate
+      openshot-qt
       blender-hip
       tree-sitter
       arduino-ide
@@ -43,6 +44,7 @@
       autoconf
       libclang
       typstyle
+      whatsie
       clojure
       vesktop
       nyancat
