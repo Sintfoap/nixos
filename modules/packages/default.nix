@@ -26,6 +26,7 @@
       arduino-ide
       arduino-cli
       protonup-ng
+      wl-clicker
       pulsemixer
       obs-studio
       dotnet-sdk
