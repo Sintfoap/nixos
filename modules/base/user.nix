@@ -13,19 +13,7 @@
     hardware.pulseaudio.enable = false;
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = true;
-    hardware.nvidia.prime = {
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:0:1:0";
-    };
-    hardware.nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = false;
-      powerManagement.finegrained = false;
-      open = false;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-    };
-
+    hardware.opengl.enable = true; 
     programs = {
       fish.enable = true;
       nh = {
@@ -39,13 +27,14 @@
       users.ryanm = {
         isNormalUser = true;
         description = "Ryan Moffitt";
-        extraGroups = ["networkmanager" "wheel" "video" "audio" "libvirtd" "docker" "bluetooth" "dialout" "keyboard"];
+        extraGroups = ["networkmanager" "wheel" "video" "audio" "libvirtd" "docker" "bluetooth" "dialout" ];
         shell = pkgs.fish;
       };
     };
 
     home-manager = {
       users.ryanm = import ../home.nix;
+      extraSpecialArgs = {inherit inputs;};
       useGlobalPkgs = true;
       useUserPackages = true;
       backupFileExtension = "backup";

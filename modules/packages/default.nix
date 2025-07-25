@@ -5,8 +5,11 @@
 }: {
   config = {
     environment.systemPackages = with pkgs; [
+      inputs.wonderwall.packages.${pkgs.system}.ninjabrainbot
       inputs.nix-alien.packages.${pkgs.system}.nix-alien
+      inputs.wonderwall.packages.${pkgs.system}.waywall
       inputs.fix-python.packages.${pkgs.system}.default
+      inputs.wonderwall.packages.${pkgs.system}.glfw
       inputs.alejandra.defaultPackage.${pkgs.system}
       networkmanagerapplet
       nix-output-monitor
@@ -46,6 +49,7 @@
       libclang
       typstyle
       whatsie
+      lumafly
       clojure
       vesktop
       nyancat
@@ -63,8 +67,10 @@
       neovim
       awscli
       lutris
+      godot
       antlr
       typst
+      krita
       unzip
       yazi
       gimp

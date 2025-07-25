@@ -16,7 +16,8 @@
         wireplumber.enable = true;
       };
       xserver = {
-        videoDrivers = ["nvidia"];
+        enable = true;
+        videoDrivers = [ "modesetting" ];
         xkb = {
           layout = "us";
           variant = "";

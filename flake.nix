@@ -4,6 +4,7 @@
     nix-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
     home-manager.url = "github:nix-community/home-manager"; # module to manage home config files
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    wonderwall.url = "git+https://github.com/malleum/waywall";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     alejandra.url = "github:kamadorueda/alejandra/3.0.0"; # formatter
